@@ -2,6 +2,8 @@
 
 	var fullscreenSlick = {
 
+		namespace: 'fullscreen-slick',
+
 		/**
 		 * Open full screen slick slider.
 		 *
@@ -23,16 +25,16 @@
 
 			$container.slick(options);
 
-			$container.find('.slick-track').on('click', '.slick-slide img', function(event) {
+			$container.find('.slick-track').on('click.' + this.namespace, '.slick-slide img', function(event) {
 				event.stopPropagation();
 				$container.slick('slickNext');
 			});
 
-			$container.find('.slick-track').on('click', function() {
+			$container.find('.slick-track').on('click.' + this.namespace, function() {
 				fullscreenSlick.close();
 			});
 
-			$(document).on('keyup', function(event) {
+			$(document).on('keyup.' + this.namespace, function(event) {
 
 				// Escape
 				if (event.keyCode == 27) {
@@ -64,8 +66,19 @@
 		 * @return {void}
 		 */
 		close: function() {
+			this.unbindEvents();
 			this.$container.slick('unslick');
-			this.$container.remove();
+			this.$container.remove();			
+		},
+
+		/**
+		 * Unbind events.
+		 *
+		 * @return {void}
+		 */
+		unbindEvents: function() {
+			$(document).off('.' + this.namespace);
+			this.$container.find('.slick-track').off('.' + this.namespace);
 		}
 
 	};
