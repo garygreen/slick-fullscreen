@@ -1,4 +1,4 @@
-(function($) {
+(function(window, $) {
 
 	var slickFullscreen = {
 
@@ -93,4 +93,6 @@
 		});
 	});
 
-})(jQuery);
+	window.slickFullscreen = slickFullscreen;
+
+})(window, jQuery);
