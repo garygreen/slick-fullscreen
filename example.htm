@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/styles/github.min.css">
+	<link rel="stylesheet" href="fullscreen-slick.css">
+	<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		.jumbotron {
+			background-color: #00bcd4;
+			color: #fff;
+		}
+
+		.jumbotron .lead {
+			color: #064850;
+		}
+
+		section img {
+			margin-right: 8px;
+		}
+
+		section a:hover {
+			text-decoration: none;
+		}
+
+	</style>
+</head>
+<body>
+
+<section class="jumbotron">
+	<div class="container">
+		<h1 class="jumbotron-heading">Fullscreen Slick Slider</h1>
+		<p class="lead text-muted">Use the power of slick.js in fullscreen mode.</p>
+	</div>
+</section>
+
+<div class="container">
+	<section data-fullscreen-slick='{"fullscreenTarget": "a", "dots": true, "centerMode": true, "centerPadding": "60px"}' class="form-group">
+		<a href="https://placeholdit.imgix.net/~text?txtsize=33&amp;txt=image1&amp;w=1280&amp;h=1024">
+			<img src="https://placeholdit.imgix.net/~text?txtsize=33&amp;txt=image1&amp;w=100&amp;h=100">
+		</a>
+		<a href="https://placeholdit.imgix.net/~text?txtsize=33&amp;txt=image2&amp;w=1280&amp;h=1024">
+			<img src="https://placeholdit.imgix.net/~text?txtsize=33&amp;txt=image2&amp;w=100&amp;h=100">
+		</a>
+		<a href="https://placeholdit.imgix.net/~text?txtsize=33&amp;txt=image3&amp;w=1280&amp;h=1024">
+			<img src="https://placeholdit.imgix.net/~text?txtsize=33&amp;txt=image3&amp;w=100&amp;h=100">
+		</a>
+		<a href="https://placeholdit.imgix.net/~text?txtsize=33&amp;txt=image4&amp;w=300&amp;h=300">
+			<img src="https://placeholdit.imgix.net/~text?txtsize=33&amp;txt=image4&amp;w=100&amp;h=100">
+		</a>
+	</section>
+
+	<section>
+		<h2>Usage</h2>
+
+		<p>1. Include <code>fullscreen-slick.js</code> and <code>fullscreen-slick.css</code> in your project.</p>
+
+		<p>2. Add <code>data-fullscreen-slick</code> to the container you want to open images in fullscreen.</p>
+
+<pre><code class="html">&lt;section data-fullscreen-slick&gt;
+  &lt;a href="image1.jpg"&gt;
+    &lt;img src="image1-thumb.jpg"&gt;
+  &lt;/a&gt;
+  &lt;a href="image2.jpg"&gt;
+    &lt;img src="image2-thumb.jpg"&gt;
+  &lt/a&gt;
+&lt;/section&gt;</code></pre>
+
+		<p>By default all anchor tags are picked and used for the images, you can customise a different target by changing <code>fullscreenTarget</code> along with any other options slick provides.</p>
+
+		<pre><code class="html">&lt;section data-fullscreen-slick='{"fullscreenTarget": "img", "dots": true, "centerMode": true, "centerPadding": "60px"}'&gt;
+  &lt;img src="image1.jpg"&gt;
+  &lt;img src="image2.jpg"&gt;
+&lt;/section&gt;</code></pre>
+
+	</section>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/languages/xml.min.js"></script>
+<script type="text/javascript" src="fullscreen-slick.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>
