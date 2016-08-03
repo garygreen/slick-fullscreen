@@ -1,8 +1,8 @@
 (function($) {
 
-	var fullscreenSlick = {
+	var slickFullscreen = {
 
-		namespace: 'fullscreen-slick',
+		namespace: 'slick-fullscreen',
 
 		/**
 		 * Open full screen slick slider.
@@ -16,7 +16,7 @@
 			// Create new versions of the slides.
 			var clonedSlides = [];
 			$slides.each(function() {
-				clonedSlides.push('<div><img src="' + fullscreenSlick.getImageSource($(this)) + '"></div>');
+				clonedSlides.push('<div><img src="' + slickFullscreen.getImageSource($(this)) + '"></div>');
 			});
 
 			var $container = $('<div class="slick-fullscreen">' + clonedSlides.join('') + '</div>');
@@ -31,14 +31,14 @@
 			});
 
 			$container.find('.slick-track').on('click.' + this.namespace, function() {
-				fullscreenSlick.close();
+				slickFullscreen.close();
 			});
 
 			$(document).on('keyup.' + this.namespace, function(event) {
 
 				// Escape
 				if (event.keyCode == 27) {
-					fullscreenSlick.close();
+					slickFullscreen.close();
 				}
 
 			});
@@ -83,13 +83,13 @@
 
 	};
 
-	$('[data-fullscreen-slick]').each(function() {
-		var options = $(this).data('fullscreen-slick') || {};
+	$('[data-slick-fullscreen]').each(function() {
+		var options = $(this).data('slick-fullscreen') || {};
 		var $targets = $(options.fullscreenTarget || 'a', this);
 
 		$targets.on('click', function(event) {
 			event.preventDefault();
-			fullscreenSlick.open($targets, $.extend({}, options, { initialSlide: $(this).index() }));
+			slickFullscreen.open($targets, $.extend({}, options, { initialSlide: $(this).index() }));
 		});
 	});
 

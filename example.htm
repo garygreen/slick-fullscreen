@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/styles/github.min.css">
-	<link rel="stylesheet" href="fullscreen-slick.css">
+	<link rel="stylesheet" href="slick-fullscreen.css">
 	<style type="text/css">
 		body {
 			margin: 0;
@@ -42,7 +42,7 @@
 </section>
 
 <div class="container">
-	<section data-fullscreen-slick='{"fullscreenTarget": "a", "dots": true, "centerMode": true, "centerPadding": "60px", "speed": 0}' class="form-group">
+	<section data-slick-fullscreen='{"fullscreenTarget": "a", "dots": true, "centerMode": true, "centerPadding": "60px", "speed": "0"}' class="form-group">
 		<a href="https://placeholdit.imgix.net/~text?txtsize=33&amp;txt=image1&amp;w=1280&amp;h=1024">
 			<img src="https://placeholdit.imgix.net/~text?txtsize=33&amp;txt=image1&amp;w=100&amp;h=100">
 		</a>
@@ -60,11 +60,11 @@
 	<section>
 		<h2>Usage</h2>
 
-		<p>1. Include <code>fullscreen-slick.js</code> and <code>fullscreen-slick.css</code> in your project.</p>
+		<p>1. Include <code>slick-fullscreen.js</code> and <code>slick-fullscreen.css</code> in your project.</p>
 
-		<p>2. Add <code>data-fullscreen-slick</code> to the container you want to open images in fullscreen.</p>
+		<p>2. Add <code>data-slick-fullscreen</code> to the container you want to open images in fullscreen.</p>
 
-<pre><code class="html">&lt;section data-fullscreen-slick&gt;
+<pre><code class="html">&lt;section data-slick-fullscreen&gt;
   &lt;a href="image1.jpg"&gt;
     &lt;img src="image1-thumb.jpg"&gt;
   &lt;/a&gt;
@@ -75,7 +75,7 @@
 
 		<p>By default all anchor tags are picked and used for the images, you can customise a different target by changing <code>fullscreenTarget</code> along with any other options slick provides.</p>
 
-		<pre><code class="html">&lt;section data-fullscreen-slick='{"fullscreenTarget": "img", "dots": true, "centerMode": true, "centerPadding": "60px"}'&gt;
+		<pre><code class="html">&lt;section data-slick-fullscreen='{"fullscreenTarget": "img", "dots": true, "centerMode": true, "centerPadding": "60px"}'&gt;
   &lt;img src="image1.jpg"&gt;
   &lt;img src="image2.jpg"&gt;
 &lt;/section&gt;</code></pre>
@@ -87,7 +87,7 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/highlight.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/languages/xml.min.js"></script>
-<script type="text/javascript" src="fullscreen-slick.js"></script>
+<script type="text/javascript" src="slick-fullscreen.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
 </body>
