@@ -1,0 +1,14 @@
+{
+  "name": "slick-fullscreen",
+  "main": "slick-fullscreen.js",
+  "homepage": "https://github.com/garygreen/slick-fullscreen",
+  "authors": [
+    "Gary Green <holegary@gmail.com>"
+  ],
+  "description": "Use slick.js in fullscreen mode",
+  "moduleType": [],
+  "keywords": [
+    "slickjs"
+  ],
+  "license": "MIT"
+}

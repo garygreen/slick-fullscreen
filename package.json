@@ -1,0 +1,15 @@
+{
+  "name": "slick-fullscreen",
+  "description": "Use slick.js in fullscreen",
+  "version": "0.0.1",
+  "keywords": [
+    "slickjs"
+  ],
+  "maintainers": [
+    {
+      "name": "Gary Green",
+      "email": "holegary@gmail.com",
+      "web": "https://github.com/garygreen"
+    }
+  ]
+}
