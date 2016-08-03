@@ -2,7 +2,13 @@
 
 	var slickFullscreen = {
 
-		namespace: 'slick-fullscreen',
+		defaults: {
+			target: 'a',
+			closeIcon: true,
+			closeOnEsc: true,
+			closeOnBackdrop: false,
+			slick: {}
+		},
 
 		/**
 		 * Open full screen slick slider.
@@ -12,6 +18,8 @@
 		 * @return {void}
 		 */
 		open: function($slides, options) {
+
+			options = $.extend({}, this.defaults, options);
 
 			// Create new versions of the slides.
 			var clonedSlides = [];
@@ -23,26 +31,37 @@
 			
 			$('body').append($container);
 
-			$container.slick(options);
+			$container.slick(options.slick);
 
-			$container.find('.slick-track').on('click.' + this.namespace, '.slick-slide img', function(event) {
+			if (options.closeIcon) {
+				var $closeIcon = $('<span class="slick-fullscreen-close">X</span>');
+				$closeIcon.on('click', function() {
+					slickFullscreen.close();
+				});
+				$container.prepend($closeIcon);
+			}
+
+			$container.find('.slick-track').on('click.slick-fullscreen', '.slick-slide img', function(event) {
 				event.stopPropagation();
 				$container.slick('slickNext');
 			});
 
-			$container.find('.slick-track').on('click.' + this.namespace, function() {
-				slickFullscreen.close();
-			});
-
-			$(document).on('keyup.' + this.namespace, function(event) {
-
-				// Escape
-				if (event.keyCode == 27) {
+			if (options.closeOnBackdrop) {
+				$container.find('.slick-track').on('click.slick-fullscreen', function() {
 					slickFullscreen.close();
-				}
+				});
+			}
 
-			});
+			if (options.closeOnEsc) {
+				$(document).on('keyup.slick-fullscreen', function(event) {
+					// Escape
+					if (event.keyCode == 27) {
+						slickFullscreen.close();
+					}
+				});
+			}
 
+			this.options = options;
 			this.$container = $container;
 		},
 
@@ -77,19 +96,23 @@
 		 * @return {void}
 		 */
 		unbindEvents: function() {
-			$(document).off('.' + this.namespace);
-			this.$container.find('.slick-track').off('.' + this.namespace);
+			$(document).off('.slick-fullscreen');
+			this.$container.find('.slick-track').off('.slick-fullscreen');
 		}
 
 	};
 
 	$('[data-slick-fullscreen]').each(function() {
 		var options = $(this).data('slick-fullscreen') || {};
-		var $targets = $(options.fullscreenTarget || 'a', this);
+		var $targets = $(options.target || slickFullscreen.defaults.target, this);
 
 		$targets.on('click', function(event) {
 			event.preventDefault();
-			slickFullscreen.open($targets, $.extend({}, options, { initialSlide: $(this).index() }));
+
+			var slickOptions = options.slick || {};
+			slickOptions.initialSlide = $(this).index();
+
+			slickFullscreen.open($targets, $.extend({}, options, { slick: slickOptions }));
 		});
 	});
 

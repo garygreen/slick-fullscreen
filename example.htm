@@ -42,7 +42,7 @@
 </section>
 
 <div class="container">
-	<section data-slick-fullscreen='{"fullscreenTarget": "a", "dots": true, "centerMode": true, "centerPadding": "60px", "speed": "0"}' class="form-group">
+	<section data-slick-fullscreen='{"target": "a", "slick":{ "dots": true, "centerMode": true, "centerPadding": "60px", "speed": 0 }}' class="form-group">
 		<a href="https://placeholdit.imgix.net/~text?txtsize=33&amp;txt=image1&amp;w=1280&amp;h=1024">
 			<img src="https://placeholdit.imgix.net/~text?txtsize=33&amp;txt=image1&amp;w=100&amp;h=100">
 		</a>
@@ -73,9 +73,9 @@
   &lt/a&gt;
 &lt;/section&gt;</code></pre>
 
-		<p>By default all anchor tags are picked and used for the images, you can customise a different target by changing <code>fullscreenTarget</code> along with any other options slick provides.</p>
+		<p>By default all anchor tags are picked and used for the images, you can customise a different target by changing <code>target</code> along with any other options slick provides.</p>
 
-		<pre><code class="html">&lt;section data-slick-fullscreen='{"fullscreenTarget": "img", "dots": true, "centerMode": true, "centerPadding": "60px"}'&gt;
+		<pre><code class="html">&lt;section data-slick-fullscreen='{"target": "img", "slick":{ "dots": true, "centerMode": true, "centerPadding": "60px"}}'&gt;
   &lt;img src="image1.jpg"&gt;
   &lt;img src="image2.jpg"&gt;
 &lt;/section&gt;</code></pre>
