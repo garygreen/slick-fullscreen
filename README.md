@@ -28,3 +28,15 @@ If your images are not inside `<a>` you can customise a different target by chan
   <img src="image2.jpg">
 </section>
 ```
+
+Or you can open the fullscreen manually.
+
+```javascript
+slickFullscreen.open($('.my-images'), { dots: false }); // Specify any option slick provides.
+```
+
+Close the fullscreen:
+
+```javascript
+slickFullscreen.close();
+```
